@@ -1,0 +1,75 @@
+
+mysql> SELECT COUNT(Odate) FROM ORDERS WHERE ODATE = '1990-10-03';
++--------------+
+| COUNT(Odate) |
++--------------+
+|            5 |
++--------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT COUNT(CITY) FROM CUSTOMERS
+    -> GROUP BY CITY;
++-------------+
+| COUNT(CITY) |
++-------------+
+|           2 |
+|           2 |
+|           2 |
+|           1 |
++-------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT Cnum, MIN(AMT) FROM ORDERS
+    -> GROUP BY Cnum;
++------+----------+
+| Cnum | MIN(AMT) |
++------+----------+
+| 2008 |    18.69 |
+| 2001 |   767.19 |
+| 2007 |  1900.10 |
+| 2003 |  5160.45 |
+| 2002 |  1713.23 |
+| 2006 |  4723.00 |
++------+----------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM CUSTOMERS WHERE CNAME LIKE 'G%'
+    ->     -> ORDER BY CNAME
+    ->     -> ORDER BY CNAME
+    -> ^C
+mysql> SELECT * FROM CUSTOMERS WHERE CNAME LIKE 'G%'
+    -> ORDER BY CNAME
+    -> LIMIT 1;
++------+----------+------+--------+------+
+| Cnum | Cname    | City | Rating | Snum |
++------+----------+------+--------+------+
+| 2002 | Giovanni | Rome |    200 | 1003 |
++------+----------+------+--------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(Rating) FROM CUSTOMERS
+    -> GROUP BY CITY;
++-------------+
+| MAX(Rating) |
++-------------+
+|         100 |
+|         200 |
+|         300 |
+|         300 |
++-------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(DISTINCT Snum) FROM ORDERS
+    -> GROUP BY ODATE;
++----------------------+
+| COUNT(DISTINCT Snum) |
++----------------------+
+|                    4 |
+|                    1 |
+|                    1 |
+|                    1 |
++----------------------+
+4 rows in set (0.00 sec)
+
+mysql>
+
