@@ -1,0 +1,67 @@
+mysql> SELECT Onum,Snum, amt*0.12 As "COMMISION" FROM ORDERS;
++------+------+-----------+
+| Onum | Snum | COMMISION |
++------+------+-----------+
+| 3001 | 1007 |      2.24 |
+| 3003 | 1001 |     92.06 |
+| 3002 | 1004 |    228.01 |
+| 3005 | 1002 |    619.25 |
+| 3006 | 1007 |    131.78 |
+| 3009 | 1003 |    205.59 |
+| 3008 | 1001 |    566.76 |
+| 3008 | 1001 |    566.76 |
+| 3011 | 1001 |   1187.03 |
++------+------+-----------+
+9 rows in set (0.04 sec)
+
+mysql> SELECT 'City' , MAX('Rating')FROM CUSTOMERS
+    -> GROUP BY 'City';
++------+---------------+
+| City | MAX('Rating') |
++------+---------------+
+| City | Rating        |
++------+---------------+
+1 row in set (0.03 sec)
+
+mysql> SELECT 'Rating','Cname','Cnum' FROM CUSTOMERS
+    -> ORDER BY 'Rating' DESC;
++--------+-------+------+
+| Rating | Cname | Cnum |
++--------+-------+------+
+| Rating | Cname | Cnum |
+| Rating | Cname | Cnum |
+| Rating | Cname | Cnum |
+| Rating | Cname | Cnum |
+| Rating | Cname | Cnum |
+| Rating | Cname | Cnum |
+| Rating | Cname | Cnum |
++--------+-------+------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT COUNT('ODATE')FROM ORDERS
+    -> GROUP BY 'ODATE';
++----------------+
+| COUNT('ODATE') |
++----------------+
+|              9 |
++----------------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
